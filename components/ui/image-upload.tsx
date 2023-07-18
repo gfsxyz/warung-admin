@@ -54,6 +54,8 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
               className="object-cover"
               alt="Billboard cover image"
               src={url}
+              priority
+              sizes="(max-width: 200px) 100vw"
             />
           </div>
         ))}
