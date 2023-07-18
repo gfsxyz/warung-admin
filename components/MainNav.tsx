@@ -23,6 +23,11 @@ const MainNav = ({
       active: pathname === `/${params.storeId}/billboards`,
     },
     {
+      href: `/${params.storeId}/categories`,
+      label: "Categories",
+      active: pathname === `/${params.storeId}/categories`,
+    },
+    {
       href: `/${params.storeId}/settings`,
       label: "Settings",
       active: pathname === `/${params.storeId}/settings`,
@@ -36,7 +41,7 @@ const MainNav = ({
           key={route.href}
           href={route.href}
           className={cn(
-            "text-sm font-medium transition-colors hover:text-primary",
+            "text-sm font-semibold transition-colors hover:text-primary",
             route.active
               ? "text-black dark:text-white"
               : "text-muted-foreground"
