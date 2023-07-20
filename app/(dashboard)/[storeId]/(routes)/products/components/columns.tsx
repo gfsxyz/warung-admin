@@ -34,7 +34,7 @@ export const columns: ColumnDef<ProductColumn>[] = [
     header: "Color",
     cell: ({ row }) => (
       <div className="flex items-center gap-x-2">
-        {row.original.color}
+        <div className="min-w-[65px] uppercase">{row.original.color}</div>
         <div
           className="w-6 h-6 border rounded-full"
           style={{ backgroundColor: row.original.color }}
