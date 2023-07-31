@@ -37,7 +37,7 @@ E-Warung Admin is a System management for E-warung webapp that provide Dashboard
 $ git clone https://github.com/gfsxyz/warung-admin.git
 ```
 
-### Setup
+### 🔑 Setup Env file
 
 - Setup Clerk & Planetscale, Stripe, and Cloudinary accounts.
 
