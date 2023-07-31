@@ -1,34 +1,81 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# E-Warung (Admin/API)
 
-## Getting Started
+E-Warung Admin is a System management for E-warung webapp that provide Dashboard & API. Build with <b>Typescript, Next, Tailwind, Shadcn, Prisma, & Planetscale (mySQL)<b>
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+### Screenshot
+
+![Homepage](./shot.png)
+
+### Links
+
+- Repo URL: [Github](https://github.com/gfsxyz/warung-admin)
+
+- Live Site URL: [Live on Vercel](https://warung-admin.vercel.app/)
+
+### Built with
+
+- [Typescript](https://www.typescriptlang.org/) - JS but cooler
+- [Next JS](https://nextjs.org/) - JS Framework
+- [Tailwind](https://tailwindcss.com/) - Styles
+- [Prisma](https://www.prisma.io/) - ORM
+- [Planetscale](https://planetscale.com/) - Database
+- [Clerk](https://clerk.com/) - Auth
+- [Cloudinary](https://cloudinary.com/) - Media storage
+
+## Author
+
+- Website - [gustifaizal.com](https://gustifaizal.com/)
+- Twitter - [@gfsxyz](https://twitter.com/gfsxyz)
+
+## ⚒ Usage
+
+### 👥 Clone the repo
+
+```shell
+$ git clone https://github.com/gfsxyz/warung-admin.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Setup Clerk & Planetscale, Stripe, and Cloudinary accounts.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Create .env file and insert:
 
-## Learn More
+```
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=<PROVIDED_BY_CLERK>
+CLERK_SECRET_KEY=<PROVIDED_BY_CLERK>
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
 
-To learn more about Next.js, take a look at the following resources:
+DATABASE_URL=<PROVIDED_BY_PLANETSCALE>
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=<PROVIDED_BY_CLOUDINARY>
+STRIPE_API_KEY=<PROVIDED_BY_STRIPE>
+STRIPE_WEBHOOK_SECRET=<PROVIDED_BY_STRIPE>
+FRONTEND_STORE_URL=YOUR_FRONT_END_URL OR http://localhost:3001
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 📦 Install dependencies
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```shell
+$ npm install
+```
 
-## Deploy on Vercel
+### 🚀 Generate & push database schema
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```shell
+$ npx prisma generate
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+&
+
+$ npx prisma push
+```
+
+### ✨ Start/Run the app
+
+```shell
+$ npm run dev
+```
